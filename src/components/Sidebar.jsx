@@ -16,7 +16,7 @@ export default function Sidebar() {
             }`}
           >
             <p> {menuItem.icon}</p>
-            <p>{menuItem.title}</p>
+            <p className='hidden md:block'>{menuItem.title}</p>
           </div>
         ))}
       </div>

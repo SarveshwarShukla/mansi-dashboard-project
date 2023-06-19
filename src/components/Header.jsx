@@ -13,7 +13,7 @@ export default function Header() {
         />
         <IoNotificationsOutline className='text-lg' />
         <div className='rounded-full'>
-          <Image src='/next.svg' alt='profile image' width={40} height={40} />
+          <Image src='/google.png' alt='profile image' width={30} height={30} className='w-6 h-6' />
         </div>
       </div>
     </div>

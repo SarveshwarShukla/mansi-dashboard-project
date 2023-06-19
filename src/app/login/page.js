@@ -10,26 +10,26 @@ export default function LoginPage() {
   return (
     <div className='bg-gray-100'>
       <div className='max-w-7xl mx-auto grid grid-cols-5 min-h-screen text-gray-700'>
-        <div className='left col-span-2 bg-black text-white text-6xl leading-6 font-semibold flex items-center justify-center'>
+        <div className='left  col-span-2 bg-black text-white text-6xl leading-6 font-semibold hidden md:flex items-center justify-center'>
           Board.
         </div>
-        <div className='right col-span-3 flex justify-center mx-auto w-96 flex-col gap-4'>
-          <div className=''>
+        <div className='right col-span-5 md:col-span-3 flex justify-center mx-auto w-80 sm:w-96 flex-col gap-4'>
+          <div className=' mx-2'>
             <p className='text-2xl font-bold text-gray-800'>Sign In</p>
             <p className='text-gray-600'>Sing in to your account</p>
           </div>
-          <div className='flex gap-3'>
+          <div className='flex gap-3 mx-2 flex-col sm:flex-row'>
             <div
-              className='flex bg-white items-center gap-1 px-6 py-3 rounded-md text-sm cursor-pointer text-gray-700'
+              className='flex bg-white items-center gap-1 px-4 py-3 rounded-md text-sm cursor-pointer text-gray-700'
               onClick={() => router.push('/')}
             >
               <FcGoogle /> Sign in with google
             </div>
-            <div className='flex bg-white items-center gap-1 px-6 py-3 rounded-md text-sm cursor-pointer text-gray-700'>
+            <div className='flex bg-white items-center gap-1 px-4 py-3 rounded-md text-sm cursor-pointer text-gray-700'>
               <FaApple /> Sign in with apple
             </div>
           </div>
-          <form className='bg-white py-6 px-6 rounded'>
+          <form className='bg-white py-6 px-6 rounded mx-2'>
             <div className='flex flex-col gap-5'>
               <label
                 htmlFor='email'

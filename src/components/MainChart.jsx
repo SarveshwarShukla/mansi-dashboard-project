@@ -6,6 +6,7 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
+  ResponsiveContainer,
 } from 'recharts';
 import { useState, useEffect } from 'react';
 
@@ -22,30 +23,34 @@ export default function MainChart() {
   }, []);
 
   return (
-    <div className='bg-white px-5 py-8 rounded-lg mt-3'>
+    <div className='bg-white px-5 py-8 rounded-lg mt-3 w-full'>
       <h2 className='text-lg text-gray-800 font-semibold'>Activities</h2>
       <p className='text-sm text-gray-600'>May-June 2023</p>
-      <LineChart width={850} height={300} data={data}>
-        <CartesianGrid vertical={false} strokeDasharray='3 3' />
-        <XAxis dataKey='name' />
-        <YAxis tickCount={6} domain={[0, 500]} />
-        <Tooltip />
-        <Legend align='right' verticalAlign='top' margin={{ top: -10 }} />
-        <Line
-          type='monotone'
-          dataKey='user'
-          stroke='#8884d8'
-          strokeWidth={2}
-          dot={false}
-        />
-        <Line
-          type='monotone'
-          dataKey='guest'
-          stroke='#82ca9d'
-          strokeWidth={2}
-          dot={false}
-        />
-      </LineChart>
+      <div className='w-[32rem] sm:w-[42rem] md:w-[50rem] h-80'>
+        <ResponsiveContainer width="100%" height='100%'>
+          <LineChart data={data}>
+            <CartesianGrid vertical={false} strokeDasharray='3 3' />
+            <XAxis dataKey='name' />
+            <YAxis tickCount={6} domain={[0, 500]} />
+            <Tooltip />
+            <Legend align='right' verticalAlign='top' margin={{ top: -10 }} />
+            <Line
+              type='monotone'
+              dataKey='user'
+              stroke='#8884d8'
+              strokeWidth={2}
+              dot={false}
+            />
+            <Line
+              type='monotone'
+              dataKey='guest'
+              stroke='#82ca9d'
+              strokeWidth={2}
+              dot={false}
+            />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 }
